@@ -1,3 +1,4 @@
 {
+  "allowImportingTsExtensions": true,
   "extends": "astro/tsconfigs/strict"
 }
