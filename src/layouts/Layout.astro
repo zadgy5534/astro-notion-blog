@@ -19,7 +19,7 @@ const database = await getDatabase()
 const siteTitle = title ? `${title} - ${database.Title}` : database.Title
 const siteDescription = description ? description : database.Description
 const siteURL = new URL(getNavLink(path), Astro.site).toString()
-const siteOGImage = new URL(getStaticFilePath('/default-og-image.png'), Astro.site)
+const siteOGImage = new URL(getStaticFilePath('/thin_cols.png'), Astro.site)
 
 let coverImageURL: string
 if (database.Cover) {
@@ -118,6 +118,11 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
           <slot name="main" />
 
           <footer>
+            <div>
+              <span>© 2023 M.Shimazaki (zadgy5534)</span>
+              <a href="https://deltographos.com"
+                >Deltographos.com</a>
+            </div>
             <div>
               <span>Powered by</span>
               <a href="https://github.com/otoyo/astro-notion-blog"
