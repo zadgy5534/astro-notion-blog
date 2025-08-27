@@ -21,10 +21,10 @@
     "@astrojs/rss": "^2.4.2",
     "@notionhq/client": "^2.2.9",
     "@supercharge/promise-pool": "^2.4.0",
-    "astro": "^2.5.0",
+    "astro": "^5.13.4",
     "dotenv": "^16.0.3",
     "katex": "^0.16.7",
-    "mermaid": "^10.1.0",
+    "mermaid": "^11.10.1",
     "metascraper": "^5.34.4",
     "metascraper-description": "^5.34.4",
     "metascraper-image": "^5.34.4",
@@ -34,7 +34,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@nrwl/nx-cloud": "^16.0.5",
+    "@nrwl/nx-cloud": "^19.1.0",
     "@types/js-base64": "^3.3.1",
     "@types/metascraper": "^5.14.1",
     "@types/metascraper-description": "^5.14.1",
@@ -45,7 +45,7 @@
     "cli-progress": "^3.12.0",
     "eslint": "^8.41.0",
     "eslint-plugin-astro": "^0.27.0",
-    "nx": "16.2.1"
+    "nx": "^16.10.0"
   },
   "nx": {
     "targets": {
