@@ -1,0 +1,22 @@
+[NX Daemon Server] - 2025-08-30T05:48:24.415Z - Started listening on: /private/var/folders/gr/bdxpb3wn6_x1vpfj0gqbvbgw0000gn/T/cdb866e1b60684508d2b/d.sock
+[NX Daemon Server] - 2025-08-30T05:48:24.421Z - [WATCHER]: Subscribed to changes within: /Users/mshimzki/Projects/astro-notion-blog (native)
+[NX Daemon Server] - 2025-08-30T05:48:24.425Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-30T05:48:24.426Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-08-30T05:48:24.428Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-30T05:48:24.431Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2025-08-30T05:48:24.432Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2025-08-30T05:48:24.432Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2025-08-30T05:48:24.433Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-08-30T05:48:24.434Z - [WATCHER]: Stopping the watcher for /Users/mshimzki/Projects/astro-notion-blog (sources)
+[NX Daemon Server] - 2025-08-30T05:48:24.435Z - [WATCHER]: Stopping the watcher for /Users/mshimzki/Projects/astro-notion-blog (outputs)
+[NX Daemon Server] - 2025-08-30T06:08:39.403Z - Started listening on: /private/var/folders/gr/bdxpb3wn6_x1vpfj0gqbvbgw0000gn/T/cdb866e1b60684508d2b/d.sock
+[NX Daemon Server] - 2025-08-30T06:08:39.409Z - [WATCHER]: Subscribed to changes within: /Users/mshimzki/Projects/astro-notion-blog (native)
+[NX Daemon Server] - 2025-08-30T06:08:39.413Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-30T06:08:39.415Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-08-30T06:08:39.417Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-30T06:08:39.419Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2025-08-30T06:08:39.420Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2025-08-30T06:08:39.420Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2025-08-30T06:08:39.421Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-08-30T06:08:39.422Z - [WATCHER]: Stopping the watcher for /Users/mshimzki/Projects/astro-notion-blog (sources)
+[NX Daemon Server] - 2025-08-30T06:08:39.422Z - [WATCHER]: Stopping the watcher for /Users/mshimzki/Projects/astro-notion-blog (outputs)
