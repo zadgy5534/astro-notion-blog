@@ -1,0 +1,463 @@
+{
+  "version": "6.0",
+  "nxVersion": "16.10.0",
+  "deps": {
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "@notionhq/client": "^2.2.9",
+    "@supercharge/promise-pool": "^2.4.0",
+    "astro": "^5.13.5",
+    "dotenv": "^16.0.3",
+    "katex": "^0.16.7",
+    "mermaid": "^11.10.1",
+    "metascraper": "^5.34.4",
+    "metascraper-description": "^5.34.4",
+    "metascraper-image": "^5.34.4",
+    "metascraper-title": "^5.34.4",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@nrwl/nx-cloud": "^19.1.0",
+    "@types/js-base64": "^3.3.1",
+    "@types/metascraper": "^5.14.1",
+    "@types/metascraper-description": "^5.14.1",
+    "@types/metascraper-image": "^5.14.0",
+    "@types/metascraper-title": "^5.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "cli-progress": "^3.12.0",
+    "eslint": "^8.41.0",
+    "eslint-plugin-astro": "^0.27.0",
+    "nx": "^16.10.0"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "astro-notion-blog": [
+        {
+          "file": ".eslintrc.json",
+          "hash": "16303240300860658645"
+        },
+        {
+          "file": ".github/FUNDING.yml",
+          "hash": "13167163935576518096"
+        },
+        {
+          "file": ".github/ISSUE_TEMPLATE/bug-report.ja.md",
+          "hash": "2424006834314826083"
+        },
+        {
+          "file": ".github/ISSUE_TEMPLATE/bug-report.md",
+          "hash": "9989198346783832364"
+        },
+        {
+          "file": ".github/pull.yml",
+          "hash": "4536559148018298162"
+        },
+        {
+          "file": ".github/workflows/deploy.yml",
+          "hash": "18337097532259922288"
+        },
+        {
+          "file": ".github/workflows/format.yml",
+          "hash": "4398310861189296598"
+        },
+        {
+          "file": ".github/workflows/lint.yml",
+          "hash": "6372084934292566119"
+        },
+        {
+          "file": ".nxignore",
+          "hash": "4014036364570777077"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "16499857867808849113"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "7346916979262530099"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "4591125310708873372"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "1679638439007128934"
+        },
+        {
+          "file": "LICENSE",
+          "hash": "3968061630708903782"
+        },
+        {
+          "file": "README.ja.md",
+          "hash": "16700162775570187089"
+        },
+        {
+          "file": "README.md",
+          "hash": "8596734249613445625"
+        },
+        {
+          "file": "astro.config.mjs",
+          "hash": "18330204157870144614"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "13276529309819926879"
+        },
+        {
+          "file": "package.json",
+          "hash": "8389764520754229004",
+          "deps": [
+            "npm:@astrojs/react",
+            "npm:@astrojs/rss",
+            "npm:@notionhq/client",
+            "npm:@supercharge/promise-pool",
+            "npm:astro",
+            "npm:dotenv",
+            "npm:katex",
+            "npm:mermaid",
+            "npm:metascraper",
+            "npm:metascraper-description",
+            "npm:metascraper-image",
+            "npm:metascraper-title",
+            "npm:prismjs",
+            "npm:react",
+            "npm:react-dom",
+            "npm:@nrwl/nx-cloud",
+            "npm:@types/js-base64",
+            "npm:@types/metascraper",
+            "npm:@types/metascraper-description",
+            "npm:@types/metascraper-image",
+            "npm:@types/metascraper-title",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:cli-progress",
+            "npm:eslint",
+            "npm:eslint-plugin-astro",
+            "npm:nx"
+          ]
+        },
+        {
+          "file": "public/favicon.ico",
+          "hash": "7704907836487628856"
+        },
+        {
+          "file": "public/notion/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "public/scripts/fslightbox.js",
+          "hash": "8248718550495183067"
+        },
+        {
+          "file": "public/thin_cols.png",
+          "hash": "2228062860892970010"
+        },
+        {
+          "file": "scripts/blog-contents-cache.cjs",
+          "hash": "18315042413729775062"
+        },
+        {
+          "file": "scripts/retrieve-block-children.cjs",
+          "hash": "8955970909318717998"
+        },
+        {
+          "file": "src/components/BlogPostsLink.astro",
+          "hash": "16772277212040210470"
+        },
+        {
+          "file": "src/components/BlogTagsLink.astro",
+          "hash": "2572770058089283034"
+        },
+        {
+          "file": "src/components/GoogleAnalytics.astro",
+          "hash": "2303776643821888124"
+        },
+        {
+          "file": "src/components/NoContents.astro",
+          "hash": "9362698545383067932"
+        },
+        {
+          "file": "src/components/NotionBlocks.astro",
+          "hash": "8047985109060447952"
+        },
+        {
+          "file": "src/components/Pagination.astro",
+          "hash": "16261282550981570813"
+        },
+        {
+          "file": "src/components/PostBody.astro",
+          "hash": "4312032096917142189"
+        },
+        {
+          "file": "src/components/PostDate.astro",
+          "hash": "8124538688150332996"
+        },
+        {
+          "file": "src/components/PostExcerpt.astro",
+          "hash": "13219248410160263319"
+        },
+        {
+          "file": "src/components/PostFeaturedImage.astro",
+          "hash": "14017548035865654130"
+        },
+        {
+          "file": "src/components/PostRelativeLink.astro",
+          "hash": "4948295840790432772"
+        },
+        {
+          "file": "src/components/PostTags.astro",
+          "hash": "12000406451753405804"
+        },
+        {
+          "file": "src/components/PostTitle.astro",
+          "hash": "8295727633042549432"
+        },
+        {
+          "file": "src/components/ReadMoreLink.astro",
+          "hash": "4210447307787835410"
+        },
+        {
+          "file": "src/components/notion-blocks/Bookmark.astro",
+          "hash": "869729291347966291"
+        },
+        {
+          "file": "src/components/notion-blocks/BulletedListItems.astro",
+          "hash": "2426074999811554152"
+        },
+        {
+          "file": "src/components/notion-blocks/Callout.astro",
+          "hash": "8382116869014878327"
+        },
+        {
+          "file": "src/components/notion-blocks/Caption.astro",
+          "hash": "6699555280119776764"
+        },
+        {
+          "file": "src/components/notion-blocks/Code.astro",
+          "hash": "1896347232239155597"
+        },
+        {
+          "file": "src/components/notion-blocks/ColumnList.astro",
+          "hash": "7146408654792996090"
+        },
+        {
+          "file": "src/components/notion-blocks/Divider.astro",
+          "hash": "17101183952759938402"
+        },
+        {
+          "file": "src/components/notion-blocks/Embed.astro",
+          "hash": "2511309058367548437"
+        },
+        {
+          "file": "src/components/notion-blocks/Equation.astro",
+          "hash": "13105676097305090294"
+        },
+        {
+          "file": "src/components/notion-blocks/File.astro",
+          "hash": "3983418599487601404"
+        },
+        {
+          "file": "src/components/notion-blocks/Heading1.astro",
+          "hash": "15466082497347509442"
+        },
+        {
+          "file": "src/components/notion-blocks/Heading2.astro",
+          "hash": "2207318499565052167"
+        },
+        {
+          "file": "src/components/notion-blocks/Heading3.astro",
+          "hash": "13379158960434453130"
+        },
+        {
+          "file": "src/components/notion-blocks/Image.astro",
+          "hash": "15883776849894401217"
+        },
+        {
+          "file": "src/components/notion-blocks/LinkToPage.astro",
+          "hash": "14615804521660710136"
+        },
+        {
+          "file": "src/components/notion-blocks/Mention.astro",
+          "hash": "7079275553374655577"
+        },
+        {
+          "file": "src/components/notion-blocks/NumberedListItems.astro",
+          "hash": "18112689209029495929"
+        },
+        {
+          "file": "src/components/notion-blocks/Paragraph.astro",
+          "hash": "17238813630955813542"
+        },
+        {
+          "file": "src/components/notion-blocks/Quote.astro",
+          "hash": "761156382402528906"
+        },
+        {
+          "file": "src/components/notion-blocks/RichText.astro",
+          "hash": "15189232081826108907"
+        },
+        {
+          "file": "src/components/notion-blocks/SyncedBlock.astro",
+          "hash": "4042295617732573514"
+        },
+        {
+          "file": "src/components/notion-blocks/Table.astro",
+          "hash": "14610397349796072763"
+        },
+        {
+          "file": "src/components/notion-blocks/TableOfContents.astro",
+          "hash": "3052574976548201133"
+        },
+        {
+          "file": "src/components/notion-blocks/ToDo.astro",
+          "hash": "4442846880295962504"
+        },
+        {
+          "file": "src/components/notion-blocks/Toggle.astro",
+          "hash": "17658246455411661513"
+        },
+        {
+          "file": "src/components/notion-blocks/TweetEmbed.astro",
+          "hash": "4491839727882005419"
+        },
+        {
+          "file": "src/components/notion-blocks/Video.astro",
+          "hash": "5808890433341797777"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Anchor.astro",
+          "hash": "5453367644035041238"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Bold.astro",
+          "hash": "14808171286027137731"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Code.astro",
+          "hash": "325576179428652895"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Color.astro",
+          "hash": "4981265048643051998"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Italic.astro",
+          "hash": "11898904611016734120"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Strikethrough.astro",
+          "hash": "1175914907040963230"
+        },
+        {
+          "file": "src/components/notion-blocks/annotations/Underline.astro",
+          "hash": "14296079674178218050"
+        },
+        {
+          "file": "src/env.d.ts",
+          "hash": "12247281929465002553"
+        },
+        {
+          "file": "src/images/icon-arrow-link.svg",
+          "hash": "10343913183354361483"
+        },
+        {
+          "file": "src/integrations/cover-image-downloader.ts",
+          "hash": "3476938075991196451"
+        },
+        {
+          "file": "src/integrations/custom-icon-downloader.ts",
+          "hash": "4674441950613138637"
+        },
+        {
+          "file": "src/integrations/featured-image-downloader.ts",
+          "hash": "5561125818904632207"
+        },
+        {
+          "file": "src/integrations/public-notion-copier.ts",
+          "hash": "899223453048779578"
+        },
+        {
+          "file": "src/layouts/Layout.astro",
+          "hash": "12867239880016009251"
+        },
+        {
+          "file": "src/lib/blog-helpers.ts",
+          "hash": "7961442195953903701"
+        },
+        {
+          "file": "src/lib/interfaces.ts",
+          "hash": "17656121439259808290"
+        },
+        {
+          "file": "src/lib/notion/client.ts",
+          "hash": "4008800937635714706"
+        },
+        {
+          "file": "src/lib/notion/request-params.ts",
+          "hash": "7639630768506877438"
+        },
+        {
+          "file": "src/lib/notion/responses.ts",
+          "hash": "8212756412575444077"
+        },
+        {
+          "file": "src/lib/style-helpers.ts",
+          "hash": "13629914417529772620"
+        },
+        {
+          "file": "src/lib/utils.ts",
+          "hash": "5747928063707898110"
+        },
+        {
+          "file": "src/pages/feed.ts",
+          "hash": "5741765860785722544"
+        },
+        {
+          "file": "src/pages/index.astro",
+          "hash": "13711282915412100809"
+        },
+        {
+          "file": "src/pages/posts/[slug].astro",
+          "hash": "6855350161431961404"
+        },
+        {
+          "file": "src/pages/posts/page/[page].astro",
+          "hash": "313262546341791318"
+        },
+        {
+          "file": "src/pages/posts/tag/[tag]/page/[page].astro",
+          "hash": "3287504839219223527"
+        },
+        {
+          "file": "src/pages/posts/tag/[tag].astro",
+          "hash": "13504223989592471099"
+        },
+        {
+          "file": "src/server-constants.ts",
+          "hash": "10852790520010739207"
+        },
+        {
+          "file": "src/styles/blog.module.css",
+          "hash": "11012994612134859236"
+        },
+        {
+          "file": "src/styles/notion-color.css",
+          "hash": "6289553118411059504"
+        },
+        {
+          "file": "src/styles/syntax-coloring.css",
+          "hash": "11689587646731024629"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "7530584887022458181"
+        }
+      ]
+    },
+    "nonProjectFiles": []
+  }
+}
