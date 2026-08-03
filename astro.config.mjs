@@ -1,5 +1,6 @@
+import 'dotenv/config'; // .env を process.env へ読み込む (integration/hook は Node 側で動くため必須)
 import { defineConfig } from 'astro/config';
-//import icon from "astro-icon";
+import icon from 'astro-icon';
 import { CUSTOM_DOMAIN, BASE_PATH } from './src/server-constants';
 import CoverImageDownloader from './src/integrations/cover-image-downloader';
 import CustomIconDownloader from './src/integrations/custom-icon-downloader';
@@ -37,7 +38,7 @@ export default defineConfig({
   site: getSite(),
   base: BASE_PATH,
   integrations: [
-    //icon(),
+    icon(),
     CoverImageDownloader(),
     CustomIconDownloader(),
     FeaturedImageDownloader(),
