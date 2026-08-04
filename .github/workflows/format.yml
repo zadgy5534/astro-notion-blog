@@ -29,3 +29,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Format by GitHub Actions
+          # 整形結果だけをコミットする。npm install が linux 用の optional
+          # 依存を lock に書き足すため、package-lock.json は除外する
+          file_pattern: '. :!package-lock.json'
