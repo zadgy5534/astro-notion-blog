@@ -1,2 +1,9 @@
 dist/**/*
 tmp/**/*
+.astro/**/*
+.nx/**/*
+package-lock.json
+
+# 第三者製ライブラリ (整形しない)
+public/scripts/fslightbox.js
+public/notion/**/*

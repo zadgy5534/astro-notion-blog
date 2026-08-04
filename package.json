@@ -52,7 +52,9 @@
     "cli-progress": "^3.12.0",
     "eslint": "^8.41.0",
     "eslint-plugin-astro": "^0.27.0",
-    "nx": "^16.10.0"
+    "nx": "^16.10.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "nx": {
     "targets": {

@@ -13,7 +13,6 @@ const { block, headings } = Astro.props
 ---
 
 <div class={`callout ${snakeToKebab(block.Callout.Color)}`}>
-
   {
     block.Callout.Icon && (
       <div class="icon">
@@ -25,7 +24,6 @@ const { block, headings } = Astro.props
       </div>
     )
   }
-  </div>
   <div>
     {
       block.Callout.RichTexts.map((richText: interfaces.RichText) => (
@@ -59,7 +57,7 @@ const { block, headings } = Astro.props
     margin: 0;
     line-height: 1.5rem;
   }
- 
+
   .callout > div.icon {
     margin-right: 0.7rem;
   }
