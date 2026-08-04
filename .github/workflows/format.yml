@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 22.x
 
+      - name: Install packages
+        run: npm ci
+
       - name: Run format
         run: npm run format
 
