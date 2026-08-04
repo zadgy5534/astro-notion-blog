@@ -259,7 +259,6 @@ export async function getAllBlocksByBlockId(blockId: string): Promise<Block[]> {
         }
       )
 
-
       results = results.concat(res.results)
 
       if (!res.has_more) {
@@ -354,7 +353,6 @@ export async function getBlock(blockId: string): Promise<Block> {
       retries: numberOfRetry,
     }
   )
-
 
   return _buildBlock(res)
 }
