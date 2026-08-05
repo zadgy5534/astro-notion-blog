@@ -24,17 +24,6 @@ const { block, headings } = Astro.props
       </div>
     )
   }
-  {
-    block.Callout.Icon && (
-      <div class="icon">
-        {block.Callout.Icon.Type === 'emoji' ? (
-          block.Callout.Icon.Emoji
-        ) : block.Callout.Icon.Type === 'external' ? (
-          <img src={block.Callout.Icon.Url} alt="Icon in a callout block" />
-        ) : null}
-      </div>
-    )
-  }
   <div>
     {
       block.Callout.RichTexts.map((richText: interfaces.RichText) => (

@@ -2,11 +2,9 @@ import { APIResponseError, Client } from '@notionhq/client'
 import retry from 'async-retry'
 import ExifTransformer from 'exif-be-gone'
 import fs, { createWriteStream } from 'node:fs'
+import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
-import axios, { type AxiosResponse } from 'axios'
 import sharp from 'sharp'
-import retry from 'async-retry'
-import ExifTransformer from 'exif-be-gone'
 import {
   DATABASE_ID,
   NOTION_API_SECRET,
@@ -411,16 +409,6 @@ export async function downloadFile(url: URL) {
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`)
     }
-    res = await axios({
-      method: 'get',
-      url: url.toString(),
-      timeout: REQUEST_TIMEOUT_MS,
-      responseType: 'stream',
-    })
-  } catch (err) {
-    console.log(err)
-    return Promise.resolve()
-  }
 
     if (!res.body) {
       throw new Error('Response body is null')
