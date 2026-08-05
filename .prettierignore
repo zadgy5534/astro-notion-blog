@@ -1,5 +1,6 @@
 dist/**/*
 tmp/**/*
+public/scripts/fslightbox.js
 .astro/**/*
 .nx/**/*
 package-lock.json
