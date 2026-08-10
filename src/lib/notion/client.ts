@@ -497,11 +497,16 @@ export async function getDatabase(): Promise<Database> {
     }
   }
 
+  // The cover lives on the database object, not the data source (which is
+  // always null for it), so read from the database and fall back to the
+  // data source.
+  const coverObject = res.cover || dataSource.cover
+
   let cover: FileObject | null = null
-  if (dataSource.cover) {
+  if (coverObject) {
     cover = {
-      Type: dataSource.cover.type,
-      Url: dataSource.cover.external?.url || dataSource.cover?.file?.url || '',
+      Type: coverObject.type,
+      Url: coverObject.external?.url || coverObject.file?.url || '',
     }
   }
 
