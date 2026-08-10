@@ -1,29 +1,17 @@
-import { defineConfig } from 'eslint/config';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import parser from 'astro-eslint-parser';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import astro from 'eslint-plugin-astro';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-
-export default defineConfig([
+export default [
+  js.configs.recommended,
+  ...typescriptEslint.configs['flat/recommended'],
+  // Must come after the TypeScript configs so .astro files keep the Astro
+  // parser instead of falling back to the TypeScript one.
+  ...astro.configs['flat/recommended'],
   {
-    extends: compat.extends(
-      'plugin:@typescript-eslint/recommended',
-      'plugin:astro/recommended'
-    ),
-
-    plugins: {
-      '@typescript-eslint': typescriptEslint,
-    },
+    // Listing the extensions here is what makes `eslint src` pick up .ts and
+    // .astro files, not just .js.
+    files: ['**/*.{js,mjs,cjs,ts,astro}'],
 
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
@@ -31,19 +19,17 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.astro'],
+    // Google's official gtag snippet relies on `arguments`. Rewriting it with
+    // rest parameters is not worth it here: the script sits inside an Astro
+    // expression, so its braces are parsed as an expression container and the
+    // body cannot be reformatted without breaking Prettier.
+    // The second pattern covers the virtual files that eslint-plugin-astro
+    // extracts each <script> block into; the rule reports against those, not
+    // the .astro file itself.
+    files: ['**/GoogleAnalytics.astro', '**/GoogleAnalytics.astro/**'],
 
-    languageOptions: {
-      parser: parser,
-      ecmaVersion: 5,
-      sourceType: 'script',
-
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
-      },
+    rules: {
+      'prefer-rest-params': 'off',
     },
-
-    rules: {},
   },
-]);
+];
