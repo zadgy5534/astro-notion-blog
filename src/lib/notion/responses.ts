@@ -38,7 +38,7 @@ interface UserObject {
   id: string
 }
 
-interface FileObject {
+export interface FileObject {
   type: string
   name?: string
   external?: External
@@ -57,6 +57,16 @@ interface External {
 export interface Emoji {
   type: string
   emoji: string
+}
+
+// One of Notion's built-in icons, picked from the icon gallery
+// https://developers.notion.com/reference/page#icon
+export interface BuiltInIcon {
+  type: string
+  icon: {
+    name: string
+    color: string
+  }
 }
 
 interface Parent {
@@ -135,7 +145,7 @@ interface DatabaseObject {
   data_sources: DataSourceObject[]
   title: RichTextObject[]
   description: RichTextObject[]
-  icon: FileObject | Emoji | null
+  icon: FileObject | Emoji | BuiltInIcon | null
   cover: FileObject
   parent: Parent
   url: string
@@ -155,7 +165,7 @@ export interface DataSourceObject {
   last_edited_by: UserObject
   title: RichTextObject[]
   description: RichTextObject[]
-  icon: FileObject | Emoji | null
+  icon: FileObject | Emoji | BuiltInIcon | null
   cover: FileObject | Emoji | null
   properties: DataSourceProperties
   parent: Parent
@@ -262,7 +272,7 @@ export interface PageObject {
   last_edited_time: string
   last_edited_by: UserObject
   in_trash: boolean
-  icon: FileObject | Emoji | null
+  icon: FileObject | Emoji | BuiltInIcon | null
   cover: FileObject
   properties: PageProperties
   parent: Parent
@@ -393,7 +403,7 @@ interface Heading {
 
 interface Callout {
   rich_text: RichTextObject[]
-  icon: FileObject | Emoji
+  icon: FileObject | Emoji | BuiltInIcon
   color: string
   children?: BlockObject[]
 }

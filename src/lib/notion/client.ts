@@ -474,28 +474,9 @@ export async function getDatabase(): Promise<Database> {
 
   const dataSource = await _getDataSource(res.data_sources?.[0]?.id || '')
 
-  let icon: FileObject | Emoji | null = null
-  if (dataSource.icon) {
-    if (dataSource.icon.type === 'emoji' && 'emoji' in dataSource.icon) {
-      icon = {
-        Type: dataSource.icon.type,
-        Emoji: dataSource.icon.emoji,
-      }
-    } else if (
-      dataSource.icon.type === 'external' &&
-      'external' in dataSource.icon
-    ) {
-      icon = {
-        Type: dataSource.icon.type,
-        Url: dataSource.icon.external?.url || '',
-      }
-    } else if (dataSource.icon.type === 'file' && 'file' in dataSource.icon) {
-      icon = {
-        Type: dataSource.icon.type,
-        Url: dataSource.icon.file?.url || '',
-      }
-    }
-  }
+  // Like the cover, the icon lives on the database object and is null on the
+  // data source.
+  const icon = _buildIcon(res.icon || dataSource.icon)
 
   // The cover lives on the database object, not the data source (which is
   // always null for it), so read from the database and fall back to the
@@ -714,26 +695,7 @@ function _buildBlock(blockObject: responses.BlockObject): Block {
       break
     case 'callout':
       if (blockObject.callout) {
-        let icon: FileObject | Emoji | null = null
-        if (blockObject.callout.icon) {
-          if (
-            blockObject.callout.icon.type === 'emoji' &&
-            'emoji' in blockObject.callout.icon
-          ) {
-            icon = {
-              Type: blockObject.callout.icon.type,
-              Emoji: blockObject.callout.icon.emoji,
-            }
-          } else if (
-            blockObject.callout.icon.type === 'external' &&
-            'external' in blockObject.callout.icon
-          ) {
-            icon = {
-              Type: blockObject.callout.icon.type,
-              Url: blockObject.callout.icon.external?.url || '',
-            }
-          }
-        }
+        const icon = _buildIcon(blockObject.callout.icon)
 
         const callout: Callout = {
           RichTexts: blockObject.callout.rich_text.map(_buildRichText),
@@ -976,6 +938,56 @@ async function _getSyncedBlockChildren(block: Block): Promise<Block[]> {
   return children
 }
 
+// Notion serves each built-in icon as a pre-colored SVG under this path,
+// named `<name>_<color>.svg`.
+const NOTION_BUILT_IN_ICON_BASE_URL = 'https://www.notion.so/icons'
+
+function _buildIcon(
+  iconObject:
+    | responses.FileObject
+    | responses.Emoji
+    | responses.BuiltInIcon
+    | null
+    | undefined
+): FileObject | Emoji | null {
+  if (!iconObject) {
+    return null
+  }
+
+  if (iconObject.type === 'emoji' && 'emoji' in iconObject) {
+    return {
+      Type: iconObject.type,
+      Emoji: iconObject.emoji,
+    }
+  }
+
+  if (iconObject.type === 'external' && 'external' in iconObject) {
+    return {
+      Type: iconObject.type,
+      Url: iconObject.external?.url || '',
+    }
+  }
+
+  if (iconObject.type === 'file' && 'file' in iconObject) {
+    return {
+      Type: iconObject.type,
+      Url: iconObject.file?.url || '',
+    }
+  }
+
+  // A built-in icon is just a hosted SVG, so expose it as an external image
+  // and every icon template renders it as-is.
+  if (iconObject.type === 'icon' && 'icon' in iconObject) {
+    const { name, color } = iconObject.icon
+    return {
+      Type: 'external',
+      Url: `${NOTION_BUILT_IN_ICON_BASE_URL}/${name}_${color}.svg`,
+    }
+  }
+
+  return null
+}
+
 function _validPageObject(pageObject: responses.PageObject): boolean {
   const prop = pageObject.properties
   return (
@@ -990,23 +1002,7 @@ function _validPageObject(pageObject: responses.PageObject): boolean {
 function _buildPost(pageObject: responses.PageObject): Post {
   const prop = pageObject.properties
 
-  let icon: FileObject | Emoji | null = null
-  if (pageObject.icon) {
-    if (pageObject.icon.type === 'emoji' && 'emoji' in pageObject.icon) {
-      icon = {
-        Type: pageObject.icon.type,
-        Emoji: pageObject.icon.emoji,
-      }
-    } else if (
-      pageObject.icon.type === 'external' &&
-      'external' in pageObject.icon
-    ) {
-      icon = {
-        Type: pageObject.icon.type,
-        Url: pageObject.icon.external?.url || '',
-      }
-    }
-  }
+  const icon = _buildIcon(pageObject.icon)
 
   let cover: FileObject | null = null
   if (pageObject.cover) {
